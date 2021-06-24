@@ -1,0 +1,40 @@
+button {
+    background: none;
+    font-size: 20px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-add-recipe {
+    margin: 20px 0px;
+    padding: 20px 25px;
+    background-color: hsl(200, 100%, 50%);
+    color: white
+}
+
+.btn-add-recipe:hover {
+    background-color: hsl(200, 100%, 35%);
+}
+
+
+.btn-edit {
+    background-color: hsl(100, 100%, 30%);
+    color: white;
+    margin-left: 10px;
+}
+
+.btn-edit:hover {
+    background-color: hsl(100, 100%, 20%);
+}
+
+.btn-delete {
+    background-color: hsl(0, 100%, 30%);
+    color: white;
+    margin-left: 10px;
+}
+
+.btn-delete:hover {
+    background-color: hsl(0, 100%, 20%);
+}
