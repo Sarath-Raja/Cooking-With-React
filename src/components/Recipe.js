@@ -12,13 +12,16 @@ export default function Recipe(props) {
         ingredients
     } = props;
 
-    const { handleDeleteRecipe } = useContext(RecipeContext);
+    const {
+        handleDeleteRecipe,
+        handleSelectedRecipe 
+    } = useContext(RecipeContext);
 
     return (
         <>
             <div className="recipe-header">
                 <h2> {name} </h2>
-                <button className="btn-edit">Edit</button>
+                <button className="btn-edit" onClick={()=>{handleSelectedRecipe(id)}}>Edit</button>
                 <button className="btn-delete" onClick={()=>{handleDeleteRecipe(id)}}>Delete</button>
             </div>
             <div>

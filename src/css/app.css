@@ -1,5 +1,11 @@
+@import-normalize;
 @import "buttons.css";
 @import "ingredient-list";
+@import "recipe-edit";
+
+*,*::before, *::after {
+    box-sizing: border-box;
+}
 
 body {
    margin: 0px;

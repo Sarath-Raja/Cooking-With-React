@@ -18,6 +18,11 @@ button {
     background-color: hsl(200, 100%, 35%);
 }
 
+.recipe-edit-btn-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
 
 .btn-edit {
     background-color: hsl(100, 100%, 30%);
