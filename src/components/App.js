@@ -24,22 +24,26 @@ function App() {
 	function handleAddRecipe() {
 		const newRecipe = {
 			id: uuidv4(),
-			name: "Banana Shake",
+			name: "",
 			servings: 1,
-			cooktime: "0.5",
-			instructions: "1. Put suger into cut bananas\n2. Blend it",
+			cooktime: "",
+			instructions: "",
 			ingredients: [
 				{
 					id: uuidv4(),
-					name: 'sugar',
-					amount: '2 tbs'
+					name: '',
+					amount: ''
 				}
 			]
 		}
+		setSelectedRecipeId(newRecipe.id)
 		setRecipes([...recipes, newRecipe])
 	}
 
 	function handleDeleteRecipe(id) {
+		if(selectedRecipeId !== null && selectedRecipeId === id)
+			setSelectedRecipeId(undefined)
+			
 		const filteredRecipes = recipes.filter(recipe => recipe.id !== id);
 		setRecipes(filteredRecipes)
 	}
@@ -48,10 +52,18 @@ function App() {
 		setSelectedRecipeId(id)
 	}
 
+	function handleRecipeChange(id, newRecipe) {
+		const newRecipes = [...recipes];
+		const recipeIndex = newRecipes.findIndex(recipe => recipe.id === id)
+		newRecipes[recipeIndex] = newRecipe;
+		setRecipes(newRecipes)
+	}
+
 	const recipeContextValue = {
 		handleAddRecipe,
 		handleDeleteRecipe,
-		handleSelectedRecipe
+		handleSelectedRecipe,
+		handleRecipeChange
 	}
 
 	return (
